@@ -1,0 +1,680 @@
+body {
+    font-family: Arial, sans-serif; /* Шрифт для всей страницы */
+    background-color: #121212; /* Темный цвет фона */
+    color: #e0e0e0; /* Светлый цвет текста */
+    margin: 0; /* Убираем отступы */
+}
+.header {
+    background-color: #1f1f1f; /* Темный фон заголовка */
+    color: #ffffff; /* Белый цвет текста заголовка */
+    padding: 15px 0; /* Отступы внутри заголовка */
+}
+.header .container {
+    width: 90%; /* Ширина контейнера */
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрируем контейнер */
+    display: flex; /* Используем Flexbox для выравнивания элементов */
+    justify-content: space-between; /* Распределяем элементы по краям */
+    align-items: center; /* Выравниваем элементы по вертикали */
+}
+.header_admin {
+    font-size: 18px; /* Размер шрифта для имени администратора */
+}
+.header_links {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы списка */
+    margin: 0; /* Убираем отступы списка */
+    display: flex; /* Используем Flexbox для горизонтального расположения ссылок */
+}
+.header_links li {
+    margin-right: 20px; /* Отступ между ссылками */
+}
+.header_links a {
+    color: #ffffff; /* Белый цвет текста ссылок */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+.header_logout {
+    color: #ffffff; /* Белый цвет текста ссылки "Выйти" */
+    text-decoration: none; /* Убираем подчеркивание у ссылки "Выйти" */
+    padding: 5px 10px; /* Отступы вокруг ссылки "Выйти" */
+    border-radius: 4px; /* Скругление углов кнопки "Выйти" */
+    background-color: #a72828; /* Цвет фона кнопки "Выйти" (красный) */
+}
+
+.header_logout:hover {
+    background-color: #882121; /* Темно-красный цвет фона кнопки "Выйти" при наведении */
+}
+main {
+    padding: 20px;
+}
+.filters {
+    background-color: #1f1f1f; /* Темный фон секции фильтров */
+    padding: 20px;
+    border-radius: 8px;
+}
+.filters label {
+    color: #ffffff; /* Белый цвет текста меток */
+}
+.filters input[type="text"],
+.filters select {
+    width: calc(100% - 20px); /* Ширина с учетом отступов */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #333333; /* Темная рамка для полей ввода и селектов */
+    background-color: #2a2a2a; /* Темный фон для полей ввода и селектов */
+    color: #e0e0e0; /* Светлый цвет текста в полях ввода и селектах */
+}
+.form-group select {
+    width: calc(100% - 20px); /* Ширина с учетом отступов */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #333333; /* Темная рамка для полей ввода и селектов */
+    background-color: #2a2a2a; /* Темный фон для полей ввода и селектов */
+    color: #e0e0e0; /* Светлый цвет текста в полях ввода и селектах */
+}
+.filters input[type="text"]::placeholder,
+.filters select option {
+    color: #aaaaaa; /* Цвет плейсхолдера и опций в селекте (серый) */
+}
+.clients {
+    background-color: #121212; /* Темный цвет фона секции */
+    padding: 20px; /* Отступы внутри секции */
+    border-radius: 8px; /* Скругление углов секции */
+}
+table {
+    width: 100%; /* Ширина таблицы на всю ширину контейнера */
+    border-collapse: collapse; /* Убираем двойные границы между ячейками */
+    color: #e0e0e0; /* Светлый цвет текста в таблице */
+}
+thead {
+    background-color: #1f1f1f; /* Темный фон для заголовка таблицы */
+}
+th, td {
+    padding: 12px; /* Отступы внутри ячеек */
+    text-align: left; /* Выравнивание текста по левому краю */
+    border-bottom: 1px solid #333333; /* Темная граница между строками */
+}
+th {
+    font-weight: bold; /* Жирный шрифт для заголовков */
+}
+tr:hover {
+    background-color: #2a2a2a; /* Цвет фона строки при наведении */
+}
+.fa {
+    color: #218838; /* Цвет иконок (зеленый) */
+    cursor: pointer; /* Указатель при наведении на иконки */
+}
+.fa:hover {
+    color: #289b41; /* Темно-зеленый цвет иконок при наведении */
+}
+
+.clients_title{
+    font-size: 24px;
+    text-align: center;
+    margin: 16px 0;
+}
+.clients_add{
+    position: sticky;
+    top: 16px;
+    margin-bottom: 10px;
+}
+.registration-form {
+    background: #1e1e1e; /* Темный фон для формы */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffffff; /* Белый цвет для меток */
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444; /* Темная граница */
+            border-radius: 4px;
+            background-color: #333; /* Темный фон для полей ввода */
+            color: #ffffff; /* Белый текст в полях ввода */
+        }
+        .form-group input::placeholder {
+            color: #bbb; /* Серый цвет для плейсхолдера */
+        }
+        .form-group textarea{
+            background-color: #333;
+            
+            color: #fff;
+            
+            border: 1px solid #555;
+            border-radius: 4px;
+            outline: none;
+           
+            caret-color: #fff;
+        }
+        .form-group textarea:focus {
+            /* Цвет границы при фокусе */
+            border-color: #777;
+          }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .button-group button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .button-group button.create {
+            background-color: #08641e; /* Зеленая кнопка */
+            color: white;
+        }
+        .button-group button.cancel {
+            background-color: #aa0d0d; /* Красная кнопка */
+            color: white;
+        }
+        .registration-form {
+            background: #1e1e1e; /* Темный фон для формы */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #ffffff; /* Белый цвет для меток */
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444; /* Темная граница */
+            border-radius: 4px;
+            background-color: #333; /* Темный фон для полей ввода */
+            color: #ffffff; /* Белый текст в полях ввода */
+        }
+        .form-group input::placeholder {
+            color: #bbb; /* Серый цвет для плейсхолдера */
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .button-group button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .button-group .create {
+            background-color: #218838; /* Зеленая кнопка */
+            color: white;
+            font-weight: bold;
+        }
+        .button-group .cancel {
+            background-color: #a72828; /* Красная кнопка */
+            color: white;
+            font-weight: bold;
+        }
+
+        .order {
+            margin-bottom: 16px;
+        }
+        
+        .order_info {
+            margin-bottom: 8px;
+        }
+        
+        .order_number {
+            font-weight: bold;
+        }
+        
+        .order_date, .order_total {
+            font-size: 0.9em; /* Уменьшенный размер шрифта */
+        }
+        
+        /* Стили для таблицы с товарами */
+        .order_items {
+            width: 100%;
+            border-collapse: collapse; /* Убираем промежутки между ячейками */
+        }
+        
+        .order_items th, .order_items td {
+            padding: 8px; /* Отступы внутри ячеек */
+            text-align: left; /* Выравнивание текста по левому краю */
+        }
+        
+        .order_items th {
+            background-color: #444; /* Фон заголовков таблицы */
+        }
+        
+        .order_items tr:nth-child(even) {
+            background-color: #333; /* Чередующиеся строки таблицы */
+        }
+        
+        .order_items tr:hover {
+            background-color: #555; /* Подсветка строки при наведении */
+        }
+        .modal__container h3{
+            color: white;
+        }
+        .modal__container small{
+            color: white;
+        }
+        .order_info{
+            color: white;
+        }
+
+        @media(max-width : 1400px){
+
+        }
+        @media(max-width : 992px){
+            table {
+                border: 0;
+              }
+            
+              table thead {
+                display: none;
+              }
+            
+              table tr {
+                margin-bottom: 10px;
+                display: block;
+                border-bottom: 2px solid #ddd;
+              }
+            
+              table td {
+                display: block;
+                text-align: right;
+                font-size: 13px;
+                border-bottom: 1px dotted #ccc;
+                border-right: 1px solid transparent;
+              }
+            
+              table td:last-child {
+                border-bottom: 0;
+              }
+            
+              table td:before {
+                content: attr(data-label);
+                float: left;
+                text-transform: uppercase;
+                font-weight: bold;
+              }
+
+        }
+        @media(max-width : 768px){
+
+        }
+        @media(max-width : 576px){
+
+        }
+    .search {
+    width: 8%; /* Ширина кнопки на всю ширину контейнера */
+    padding: 10px; /* Отступы внутри кнопки */
+    background-color: #a72828; /* Зеленый цвет фона кнопки */
+    color: #ffffff; /* Белый цвет текста кнопки */
+    border: none; /* Убираем рамку у кнопки */
+    border-radius: 4px; /* Скругление углов кнопки */
+    cursor: pointer; /* Указатель при наведении на кнопку */
+    margin-top: 10px;
+}
+.form-group .main_select {
+    width: calc(100% - 20px); /* Ширина с учетом отступов */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #333333; /* Темная рамка для полей ввода и селектов */
+    background-color: #2a2a2a; /* Темный фон для полей ввода и селектов */
+    color: #e0e0e0; /* Светлый цвет текста в полях ввода и селектах */
+}
+.form-group .main_select option {
+    color: #aaaaaa; /* Цвет плейсхолдера и опций в селекте (серый) */
+}
+.pages {
+    display: flex; /* Используем Flexbox для выравнивания элементов в одну строку */
+    flex-wrap: nowrap; /* Запрещаем перенос элементов на новую строку */
+    overflow-x: auto; /* Добавляем горизонтальную прокрутку, если элементы не помещаются */
+}
+.support-btn{
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    color: #218838; /* Цвет иконок (зеленый) */
+    cursor: pointer; /* Указатель при наведении на иконки */
+}
+.support-create-tickets {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.support-create-tickets form {
+    display: flex;
+    flex-direction: column;
+}
+
+.support-create-tickets label {
+    margin-bottom: 5px;
+}
+
+.support-create-tickets select, .support-create-tickets textarea, .support-create-tickets input[type="file"] {
+    margin-bottom: 15px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+}
+
+.support-create-tickets button[type="submit"] {
+    padding: 10px;
+    background-color: #18934b; /* Зеленый цвет */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.support-create-tickets button[type="submit"]:hover {
+    background-color: #16ac48; /* Темнее зеленый при наведении */
+}
+
+.support-create-tickets .close-create-ticket {
+    padding: 10px;
+    background-color: #ad2d1f; /* Красный цвет */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Отступ сверху */
+}
+
+.support-create-tickets .close-create-ticket:hover {
+    background-color: #b92c1c; /* Темнее красный при наведении */
+}
+.pages {
+    display: flex; 
+    flex-wrap: nowrap;
+    overflow-x: auto; 
+}
+
+.ticket-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.ticket-card {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 15px;
+    padding: 20px;
+    width: calc(33% - 40px);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-left: 4px solid #218838; /* Green accent border */
+}
+
+.ticket-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ticket-card h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #ffffff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.ticket-card p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.ticket-card .label {
+    font-weight: bold;
+    color: #aaaaaa;
+    margin-right: 5px;
+}
+
+.ticket-card .status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.ticket-card .status-waiting {
+    background-color: #f39c12;
+    color: #000;
+}
+
+.ticket-card .status-work {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.ticket-card .status-complete {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.ticket-card .date {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 0.8em;
+    color: #aaaaaa;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 4px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #333;
+}
+
+.pagination .active {
+    background-color: #218838;
+    color: white;
+}
+
+.pagination .disabled {
+    background-color: #1a1a1a;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .ticket-card {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .ticket-card {
+        width: calc(100% - 40px);
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #1f1f1f;
+    margin: 5% auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #fff;
+}
+
+.ticket-details {
+    margin-top: 20px;
+}
+
+.ticket-details p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.message-box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.message-content {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 8px;
+    white-space: pre-line;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.modal-form {
+    margin-top: 25px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.modal-form .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #aaaaaa;
+}
+
+.modal-form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #333;
+}
+
+.save-button {
+    background-color: #218838;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.save-button:hover {
+    background-color: #1a6e2e;
+}
+
+/* Make ticket cards clickable */
+.ticket-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ticket-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.message-preview {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 15px;
+    }
+}
