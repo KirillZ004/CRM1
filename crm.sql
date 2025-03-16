@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 12 2025 г., 03:39
+-- Время создания: Мар 13 2025 г., 06:30
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -158,16 +158,29 @@ CREATE TABLE `tickets` (
   `message` varchar(256) DEFAULT NULL,
   `clients` int(11) NOT NULL,
   `admin` int(11) DEFAULT NULL,
-  `create_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `create_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` enum('waiting','work','complete') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `tickets`
 --
 
-INSERT INTO `tickets` (`id`, `type`, `message`, `clients`, `admin`, `create_at`) VALUES
-(1, 'tech', '1488 dfsghdf ghgdf hgfh fgh ghfh', 1, 1, '2025-03-10 08:46:00'),
-(2, 'tech', 'Ебать мой хуй', 0, 0, '2025-03-10 09:04:50');
+INSERT INTO `tickets` (`id`, `type`, `message`, `clients`, `admin`, `create_at`, `status`) VALUES
+(1, 'tech', '1488 dfsghdf ghgdf hgfh fgh ghfh', 2, 1, '2025-03-10 08:46:00', 'work'),
+(2, 'tech', 'Ебать мой хуй', 3, 1, '2025-03-10 09:04:50', 'waiting'),
+(3, 'crm', 'Бла Бла бла бла бла бла ', 3, 1, '2025-03-13 04:12:48', 'work'),
+(4, 'tech', 'ОООООО РРРРРР ДДДДД ВВВВВ ВВВВВ АААААА', 3, 1, '2025-03-13 04:13:22', 'complete'),
+(5, 'tech', 'Не работает принтер в отделе продаж. Срочно нужна помощь!', 1, 1, '2025-03-11 04:15:39', 'work'),
+(6, 'crm', 'Не могу создать нового клиента в системе. Выдает ошибку при сохранении.', 2, 1, '2025-03-08 04:15:39', 'work'),
+(7, 'tech', 'Компьютер постоянно перезагружается. Не могу нормально работать.', 3, 1, '2025-03-12 04:15:39', 'waiting'),
+(8, 'crm', 'Необходимо добавить новую категорию товаров в систему.', 1, 1, '2025-03-03 04:15:39', 'complete'),
+(9, 'tech', 'Не работает интернет на втором этаже офиса.', 2, 1, '2025-03-10 04:15:39', 'work'),
+(10, 'crm', 'Ошибка при формировании отчета по продажам за прошлый месяц.', 3, 1, '2025-03-06 04:15:39', 'complete'),
+(11, 'tech', 'Нужно установить новое ПО на рабочие станции отдела маркетинга.', 1, 1, '2025-03-09 04:15:39', 'waiting'),
+(12, 'crm', 'Проблема с расчетом скидок для постоянных клиентов.', 2, 1, '2025-03-07 04:15:39', 'work'),
+(13, 'tech', 'Требуется настроить новый сервер для базы данных.', 3, 1, '2025-03-05 04:15:39', 'waiting'),
+(14, 'crm', 'Не отображается история заказов клиента в профиле.', 1, 1, '2025-03-04 04:15:39', 'complete');
 
 -- --------------------------------------------------------
 
@@ -211,7 +224,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `password`, `name`, `surname`, `type`, `token`) VALUES
-(1, 'admin', 'admin123', 'Administrator', 'kitchen', 'admin', 'bG9naW49YWRtaW4mcGFzc3dvcmQ9YWRtaW4xMjMmdW5pcXVlPTE3NDE1ODc4OTg='),
+(1, 'admin', 'admin123', 'Administrator', 'kitchen', 'tech', 'bG9naW49YWRtaW4mcGFzc3dvcmQ9YWRtaW4xMjMmdW5pcXVlPTE3NDE4MzQyMTY='),
 (2, 'manager', 'manager456', 'Manager', '', 'admin', ''),
 (3, 'sales', 'sales789', 'Sales Representative', '', 'admin', '');
 
@@ -299,7 +312,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT для таблицы `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT для таблицы `ticket_message`

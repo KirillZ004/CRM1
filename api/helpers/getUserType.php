@@ -2,10 +2,13 @@
 
 function getUserType($db) {
     $token = $_SESSION['token'];
-    $userType = $db->query(
-        "SELECT type FROM users WHERE token = '$token'"
-    )->fetchAll();
-
-    return $userType[0]['type'];
+    $result = $db->query("SELECT type FROM users WHERE token = '$token'")->fetchAll();
+    
+    if (empty($result)) {
+        return null; // or some default value depending on your needs
+    }
+    
+    return $result[0]['type'];
 }
+
 ?>
